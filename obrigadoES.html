@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias!</title>
+    <link rel="icon" href="img/KheroARTlogolink.png" type="image/png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --main-color: #ffffff;
+            --text-color: #5A02C7;
+            --bg-color: #5A02C7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--bg-color);
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .container {
+            background: var(--main-color);
+            color: var(--text-color);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+        }
+
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #5A02C7;
+            color: var(--main-color);
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--text-color);
+            color: var(--main-color);
+            box-shadow: 0 0 10px white;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <img src="img/principalfoto.png" alt="Imagen de KheroArt 3D" class="profile-pic">
+        <h2>¡Gracias por tu mensaje!</h2>
+        <button class="btn" onclick="goBack()">Volver al sitio web</button>
+    </div>
+
+    <script>
+        function goBack() {
+            const container = document.getElementById('container');
+            
+            // Añade la animación de salida
+            container.style.animation = "fadeOut 0.8s ease-in-out forwards";
+            document.body.style.opacity = "0";
+
+            // Espera a que termine la animación antes de redirigir
+            setTimeout(() => {
+                window.location.href = "indexES.html";
+            }, 800);
+        }
+    </script>
+</body>
+</html>
