@@ -184,25 +184,46 @@
     <section class="contact" id="contact">
         <h2>Entre em <span>contato</span></h2>
 
-        <form target="" action="https://formsubmit.co/kheroart3d@gmail.com" method="POST">            
+        <form id="contact-form">
+
+            <input type="hidden" name="access_key"
+                value="fa174e5e-6366-4b6a-8e86-e09e79e40527">
+
+            <input type="hidden" name="from_name"
+                value="https://docha9071.github.io/kheroart3d/obrigado.html">
+
+            <input type="checkbox" name="botcheck"
+                style="display:none;">
+
             <div class="input-box">
-                <input type="text" name="Full Name" placeholder="Nome Completo" required>
-                <input type="email" name="E-mail" placeholder="E-mail" required> 
+                <input type="text" name="name"
+                    placeholder="Nome Completo" required>
+
+                <input type="email" name="email"
+                    placeholder="E-mail" required>
             </div>
 
             <div class="input-box">
-                <input type="phone" name="Phone Number" placeholder="Numero de Telefone" required>
-                <input type="text" name="Subject" placeholder="Assunto" required>
+                <input type="tel" name="phone"
+                    placeholder="Número de Telefone" required>
+
+                <input type="text" name="subject"
+                    placeholder="Assunto" required>
             </div>
 
-            <textarea cols="30" rows="10" name="Message" placeholder="Mensagem" required></textarea>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://docha9071.github.io/kheroart3d/obrigado.html" />
-            <button type="submit" class="btn">Enviar mensagem</button>
+            <textarea cols="30" rows="10"
+                name="message"
+                placeholder="Mensagem" required></textarea>
+
+            <button type="submit" class="btn" id="submit-btn">
+                Enviar mensagem
+            </button>
+
+            <p id="form-status"></p>
+
         </form>
     </section>
 
-    
     <section class="about" id="about">
 
         <div class="about-content">
