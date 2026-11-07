@@ -58,9 +58,9 @@ function closeMenu() {
     }
 }
 
-
 // ==========================================
 // FORMULÁRIO DE CONTATO - WEB3FORMS
+// REDIRECIONAMENTO AUTOMÁTICO POR IDIOMA
 // ==========================================
 
 const contactForm = document.querySelector('#contact-form');
@@ -100,8 +100,31 @@ if (contactForm) {
 
             if (response.ok && result.success) {
 
+                // IDENTIFICA A PÁGINA ATUAL
+                const currentPage = window.location.pathname;
+
+                let thankYouPage;
+
+                if (currentPage.endsWith('indexES.html')) {
+
+                    // ESPANHOL
+                    thankYouPage = 'obrigadoES.html';
+
+                } else if (currentPage.endsWith('indexEN.html')) {
+
+                    // INGLÊS
+                    thankYouPage = 'obrigadoEN.html';
+
+                } else {
+
+                    // PORTUGUÊS (PADRÃO)
+                    thankYouPage = 'obrigado.html';
+
+                }
+
+                // REDIRECIONA PARA A PÁGINA CORRESPONDENTE
                 window.location.href =
-                    'https://docha9071.github.io/kheroart3d/obrigado.html';
+                    'https://docha9071.github.io/kheroart3d/' + thankYouPage;
 
             } else {
 
